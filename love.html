@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="love.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Document</title>
+</head>
+<body>
+  <div class="content">
+    <div class="name">
+      <h2>CHHEM SOKTHOU</h2>
+    </div>
+    <div class="navbar">
+      <ul>
+        <li><a href="#" onclick="showPage('pf')">Home</a></li>
+        <li><a href="#" onclick="showPage('about')">About</a></li>
+        <li><a href="#" onclick="showPage('skill')">Skill</a></li>
+        <li><a href="#" onclick="showPage('project')">Project</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page: Home -->
+  <div class="pf" id="pf" style="display: flex;">
+    <div class="big">
+      <h2>Hello. I'm</h2><br>
+      <h2>CHHEM SOKTHOU</h2>
+      <span class="auto"></span><br />
+      <h3>
+        My name is Chhem Sok Thou, 
+            I am 20 years old, and currently a 
+            student at Norton University, majoring 
+            in Software Development. I have a strong 
+            interest in software development and emerging 
+            technologies. My future goal is to become a Full-Stack Developer, 
+            capable of building websites or applications on both the front-end 
+            and back-end sides.
+      </h3><br /><br />
+      <button onclick="showPage('about')">Next</button>
+    </div>
+    <div class="slay">
+        <img src="pf1.png" alt="">
+    </div>
+   <div class="email">
+    <div class="icon1">
+      <i class="fa-brands fa-facebook"></i>&ensp;
+      <a href="#">សូមទាក់ទង់ខ្ញុំតាមFacebook</a>
+<!--box1-->
+    </div>
+    <div class="icon1">
+      <i class="fa-brands fa-telegram"></i>&ensp;
+      <a href="#">សូមទាក់ទង់ខ្ញុំតាមTelegram</a> <br>
+    
+    </div>
+    <div class="icon1">
+      <i class="fa-solid fa-envelope"></i>&ensp;
+      <a href="#">សូមទាក់ទង់ខ្ញុំតាមEmail</a><br>
+    
+    </div>
+    <div class="icon1">
+      <i class="fa-solid fa-phone"></i>&ensp;
+      <a href="#">សូមទាក់ទង់ខ្ញុំតាមCall</a><br>
+    </div>
+   </div>
+  </div>
+
+  <!-- Page: About -->
+  <div class="About" id="about" style="display: none;">
+    <h1>About Me</h1>
+
+    <button onclick="showPage('pf')">Back</button>
+    <button onclick="showPage('skill')">Next</button>
+  </div>
+
+  <!-- Page: Skill -->
+  <div class="Skill" id="skill" style="display: none;">
+    <h1>My Skills</h1>
+
+    <button onclick="showPage('about')">Back</button>
+    <button onclick="showPage('project')">Next</button>
+  </div>
+
+  <!-- Page: Project -->
+  <div class="Project" id="project" style="display: none;">
+    <h1>My Projects</h1>
+
+    <button onclick="showPage('skill')">Back</button>
+  </div>
+
+  <!-- Typed.js -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed('.auto', {
+      strings: ['WELCOME TO MY CV PROFILE !'],
+      typeSpeed: 120,
+    });
+
+    // Show Page Function
+    function showPage(pageId) {
+      const pages = ['pf', 'about', 'skill', 'project'];
+      pages.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+      });
+
+      const target = document.getElementById(pageId);
+      if (target) {
+        target.style.display = 'flex';
+      } else {
+        console.error(`No element with id: ${pageId}`);
+      }
+    }
+  </script>
+</body>
+</html>
